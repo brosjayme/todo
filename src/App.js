@@ -15,7 +15,7 @@ function App() {
    style={{display:"grid", gridTemplateColumns: "repeat(auto-fill, mimnmax(300px,1fr))",
    gap:"rem", alignItems: "flex-start"}}>
 
-<BudgetCard name ="Entertainment" amount = {200} max={2000}></BudgetCard>
+<BudgetCard name ="Entertainment" amount = {100} max={2000}></BudgetCard>
   </div>
   </Container>
   )
