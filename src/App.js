@@ -1,17 +1,24 @@
-import React from "react";
-import { Stack } from "react-bootstrap";
+import { Button, Stack } from "react-bootstrap";
 import  Container  from "react-bootstrap/Container";
+import BudgetCard from "./components/BudgetCard";
 
 function App() {
-  return <Container>
-<Stack direction="horizontal" gap={2} className="mb-4">
+  return(
+   <Container className="my-4">
+<Stack direction="horizontal" gap="2" className="mb-4">
   <h1 className="me-auto">Budgets</h1>
-  <button variant="primary">Add Budget</button>
-  <button variant="outline-primary">Add Expense</button>
-  
-</Stack>
+  <Button variant="primary">Add Budget</Button>
+  <Button variant="outline-primary">Add Expense</Button>
+  </Stack>
+
+  <div
+   style={{display:"grid", gridTemplateColumns: "repeat(auto-fill, mimnmax(300px,1fr))",
+   gap:"rem", alignItems: "flex-start"}}>
+
+<BudgetCard name ="Entertainment" amount = {200} max={2000}></BudgetCard>
+  </div>
   </Container>
-   
+  )
 }
 
 export default App;
