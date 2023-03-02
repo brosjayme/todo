@@ -1,5 +1,5 @@
 import React, {  useContext, } from "react"
-import {v4 as uuidV4} from 'uuid'
+import { v4 as uuidV4} from 'uuid'
 import useLocalStorage from "../hooks/useLocalStorage"
 const BudgetsContext = React.createContext()
 
@@ -27,7 +27,7 @@ const [expenses, setExpenses] = useLocalStorage("expenses", [])
 function getBudgetExpenses(budgetId){
     return expenses.filter(expense => expense.budgetId === budgetId )
 }
-function   addExpense({description, amount, budgetId}) { 
+function addExpense({description, amount, budgetId}) { 
     setExpenses(prevExpenses => {
         return [...prevExpenses, {id: uuidV4(), description, amount, budgetId}]
     })
@@ -43,12 +43,12 @@ function  addBudget({name, max}){
     })
 }
 function deleteBudget({id}) {
-    setExpenses(prevBudgets => {
+    setBudgets(prevBudgets => {
       return prevBudgets.filter(budget => budget.id !== id)
 })
 }
 function deleteExpense({id}) {
-    setBudgets(prevExpenses => {
+    setExpenses(prevExpenses => {
         return prevExpenses.filter(expense => expense.id !== id)
   })
 }
